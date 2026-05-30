@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="description" content="Three-day full-body dumbbell muscle-building plan — quick access to all workouts and exercises.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DB Workouts">
+
+  <title>Dumbbell Workout Plan</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="app-header">
+    <h1>🏋️ Dumbbell Club</h1>
+    <p>Three-day full-body muscle-building plan</p>
+  </header>
+
+  <!-- ── Home View ── -->
+  <main id="view-home" class="view active">
+    <div class="intro-banner">
+      <h2>Week 1 — AMRAP Format</h2>
+      <p>
+        Got two dumbbells? This three-day plan uses a full-body AMRAP approach.
+        Work through as many rounds as possible in 30 minutes, tracking your reps
+        to beat in future sessions.
+      </p>
+    </div>
+    <div class="day-grid" id="day-grid"></div>
+  </main>
+
+  <!-- ── Workout Detail View ── -->
+  <main id="view-workout" class="view">
+    <div id="workout-content"></div>
+  </main>
+
+  <!-- ── Timer View ── -->
+  <main id="view-timer" class="view">
+    <div class="timer-view">
+      <h2>Workout Timer</h2>
+      <p class="subtitle">Set your AMRAP duration and go</p>
+
+      <div class="timer-ring-wrap" role="timer" aria-live="polite" aria-label="Workout timer">
+        <svg width="220" height="220" viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="timer-ring-bg" cx="110" cy="110" r="90"/>
+          <circle
+            id="timer-ring"
+            class="timer-ring-progress"
+            cx="110" cy="110" r="90"
+            stroke-dasharray="565.49"
+            stroke-dashoffset="0"
+          />
+        </svg>
+        <div class="timer-display">
+          <span class="timer-time" id="timer-time">30:00</span>
+          <span class="timer-label">remaining</span>
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <button class="timer-btn primary" id="timer-start">Start</button>
+        <button class="timer-btn secondary" id="timer-reset">Reset</button>
+      </div>
+
+      <div class="timer-presets">
+        <h3>Quick Presets</h3>
+        <div class="preset-grid">
+          <button class="preset-btn" data-mins="20">20 min</button>
+          <button class="preset-btn selected" data-mins="30">30 min</button>
+          <button class="preset-btn" data-mins="40">40 min</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Tab Bar ── -->
+  <nav class="tab-bar" role="navigation" aria-label="Main navigation">
+    <button class="tab-btn active" data-view="home" aria-label="Workouts">
+      <span class="tab-icon" aria-hidden="true">🏠</span>
+      <span>Home</span>
+    </button>
+    <button class="tab-btn" data-view="workout" aria-label="Current workout">
+      <span class="tab-icon" aria-hidden="true">💪</span>
+      <span>Workout</span>
+    </button>
+    <button class="tab-btn" data-view="timer" aria-label="Timer">
+      <span class="tab-icon" aria-hidden="true">⏱</span>
+      <span>Timer</span>
+    </button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
